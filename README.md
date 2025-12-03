@@ -97,10 +97,6 @@ Durante todo o processo de carregamento, o sistema exibe informações de progre
 
 Uma funcionalidade crucial implementada no novo código é a limpeza automática de estados anteriores quando uma nova imagem é carregada. O sistema automaticamente desativa qualquer região previamente selecionada através do reset da flag regiao_ativa, garantindo que a nova imagem comece em estado limpo. Se existir um buffer de recorte alocado de operações anteriores, ele é liberado através de free() e o ponteiro é definido como NULL. Esta limpeza evita inconsistências onde dados de uma imagem anterior poderiam interferir com operações na nova imagem, garantindo comportamento previsível e correto do sistema.
 
-### Tratamento de Formatos
-
-O sistema é capaz de processar dois formatos principais de imagem BMP. Imagens em escala de cinza com 8 bits por pixel são copiadas diretamente sem nenhuma conversão, preservando exatamente os valores de intensidade originais. Imagens coloridas em formato RGB com 24 bits por pixel passam por uma conversão que calcula a média aritmética dos componentes vermelho, verde e azul, resultando em um único valor de intensidade que representa adequadamente a luminância percebida. Qualquer outro formato de bits por pixel resulta em erro e encerramento do processo.
-
 ## <a id="selecao"></a>Sistema de Seleção e Recorte de Região
 
 ### Modo de Seleção Interativo
