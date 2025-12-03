@@ -218,9 +218,7 @@ O modo de zoom interativo, opção 3 do menu, é iniciado após verificar que ex
 
 Após a seleção do algoritmo desejado através do submenu, o programa entra em um loop dedicado através de zoom_com_mouse() que processa continuamente eventos do mouse. O sistema detecta automaticamente se existe uma região ativa e configura o modo inicial apropriadamente: modo recorte se há região ou modo original caso contrário. Movimentos do cursor atualizam a posição rastreada em tempo real através de Enviar_Coordenadas().
 
-Operações de scroll para cima aplicam zoom in utilizando o algoritmo selecionado anteriormente, enquanto operações de scroll para baixo aplicam zoom out com o algoritmo correspondente. A funcionalidade mais sofisticada é o sistema de transições automáticas: quando em modo recorte e o usuário faz zoom out até atingir as dimensões originais de 320x240, o sistema automaticamente muda para modo original restaurando a imagem completa; quando em modo original e o usuário faz zoom in até atingir as dimensões do recorte armazenado, o sistema automaticamente reaplica o recorte centralizado. Este comportamento inteligente cria um fluxo natural de exploração.
-
-O loop continua processando eventos até que o usuário clique com o botão esquerdo, momento em que a imagem é restaurada ao estado original, todas as flags são resetadas e o controle retorna ao menu principal.
+Operações de scroll para cima aplicam zoom in utilizando o algoritmo selecionado anteriormente, enquanto operações de scroll para baixo aplicam zoom out com o algoritmo correspondente. O loop continua processando eventos até que o usuário clique com o botão esquerdo, momento em que a imagem é restaurada ao estado original, todas as flags são resetadas e o controle retorna ao menu principal.
 
 ### Processo de Restauração
 
